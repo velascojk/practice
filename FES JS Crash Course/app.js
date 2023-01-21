@@ -82,6 +82,77 @@ for (i = 0; i < word.length; ++i) {
 }
 
 
+/**
+ * Filter out all the 'FAIL' elements in an array
+ * 
+ * EXAMPLES:
+ * ['A+', 'A', 'FAIL'] => ['A+', 'A']
+ * ['FAIL', 'FAIL', 'B'] => ['B']
+ * ['FAIL'] => []
+ */
+
+// let grades = ['A+', 'A', 'FAIL']
+
+// let gradesPass = grades.filter(element => element !== 'FAIL')
+
+// console.log(gradesPass)
+
+
+/**
+ * Filter out all the 'FAIL' elements in an array
+ * without using the Array.filter method
+ * 
+ * EXAMPLES:
+ * ['A+', 'A', 'FAIL'] => ['A+', 'A']
+ * ['FAIL', 'FAIL', 'B'] => ['B']
+ * ['FAIL'] => []
+ */
+
+let grades = ['A+', 'A', 'FAIL']
+let gradesPass = []
+
+for (let i = 0; i < grades.length; ++i) {
+    if (grades[i] !== 'FAIL') {
+        gradesPass.push(grades[i])
+    }
+}
+
+console.log(gradesPass)
+
+
+/**
+ * Turn each element in an array of dollars into cents
+ * 
+ * EXAMPLES:
+ * [1, 5, 10, 3] => [100, 500, 1000, 300]
+ * [0, 10, 20] => [0, 1000, 2000]
+ */
+
+// let dollars = [1, 5, 10, 3];
+
+// let cents = dollars.map((element) => {
+//     return element * 100;
+// })
+
+// console.log(cents)
+
+/**
+ * Turn each element in an array of dollars into cents
+ * without using the map method
+ * 
+ * EXAMPLES:
+ * [1, 5, 10, 3] => [100, 500, 1000, 300]
+ * [0, 10, 20] => [0, 1000, 2000]
+ */
+
+let dollars = [1, 5, 10, 3]
+let cents = []
+
+for (let i = 0; i < dollars.length; ++i) {
+    cents.push(dollars[i] * 100)
+}
+
+console.log(cents)
 
 
 // let cash = 20
@@ -161,3 +232,36 @@ function sumOfTwoNumbers(num1, num2) {
 
 console.log(sumOfTwoNumbers(10, 10));
 
+
+let arr = [20, 30, 40, 50, 100]
+
+// First element of array:
+// console.log(arr[0])
+
+// Last element of array:
+// console.log(arr[arr.length - 1])
+
+// Add element onto end of array:
+// arr.push(200)
+
+let newArr = arr.filter(element => element < 50)
+
+console.log(newArr)
+
+
+let loopTest = [1, 2, 3]
+
+
+for (let i = 0; i < loopTest.length; ++i) {
+    console.log(loopTest[i])
+}
+
+
+let arr2 = [1, 4, 9, 16]
+
+let newArr2 = arr2.map ((element) => {
+    console.log(element)
+    return undefined;
+})
+
+console.log(newArr2)
