@@ -52,14 +52,14 @@ for (let i = 1; i <= 20; ++i) {
     }
     else if (i % 3 === 0) {
         console.log(`${i} -> Divisible by 3.`)
-    } 
+    }
     else if (i % 5 === 0) {
         console.log(`${i} -> Divisible by 5.`)
-    } 
+    }
     else {
         console.log(`${i} -> ${i}`)
     }
-} 
+}
 
 
 /**Print out every character from the string:
@@ -153,6 +153,78 @@ for (let i = 0; i < dollars.length; ++i) {
 }
 
 console.log(cents)
+
+
+let users = [{
+    username: 'JK',
+    email: 'jkvelasco2018@gmail.com',
+    password: 'test123',
+    subscriptionStatus: 'VIP',
+    discordId: 'Sluggy#007',
+    lessonsCompleted: [0, 1]
+}, {
+    username: 'test',
+    email: 'test@gmail.com',
+    password: 'test1234',
+    subscriptionStatus: 'VIP',
+    discordId: 'Test#007',
+    lessonsCompleted: [0, 1, 2]
+}, {
+    username: 'test2',
+    email: 'test2@gmail.com',
+    password: 'test1234',
+    subscriptionStatus: 'VIP',
+    discordId: 'Test#007',
+    lessonsCompleted: [0, 1, 2]
+}]
+
+function login(email, password) {
+    for (let i = 0; i < users.length; ++i) {
+        if (users[i].email === email) {
+            console.log(users[i])
+            if (users[i].password === password) {
+                console.log('Login Success!')
+            }
+            else {
+                console.log('Password incorrect!')
+            }
+            return;
+        }
+    }
+    console.log('Could not find email that exsist!')
+}
+
+login('jkvelasco2018@gmail.com', 'test123')
+
+
+/**
+ * Create a register function that accepts:
+ * - username
+ * - email
+ * - password
+ * - subscriptionStatus
+ * - discordId
+ * - lessonsCompleted
+ * 
+ * Inside your register function:
+ * 1. Create a user object
+ * 2. Push this user object onto the 'users' aray
+ */
+
+function register(user) {
+        users.push(user);
+    }
+
+register({
+    username: 'bob', 
+    email: 'bob123@gmail.com', 
+    password: 'bob123', 
+    subscriptionStatus: 'VIP', 
+    discordId: 'Bob#0002', 
+    lessonsCompleted: [0, 1, 2]})
+
+// Logs new user in  
+console.log(users);
 
 
 // let cash = 20
@@ -259,9 +331,27 @@ for (let i = 0; i < loopTest.length; ++i) {
 
 let arr2 = [1, 4, 9, 16]
 
-let newArr2 = arr2.map ((element) => {
+let newArr2 = arr2.map((element) => {
     console.log(element)
     return undefined;
 })
 
 console.log(newArr2)
+
+
+// First way of accessing an element
+console.log(document.querySelector('#title'))
+
+// Second way of accessing an element
+console.log(document.getElementById('title'))
+
+// Change HTML:
+document.querySelector('#title').innerHTML += " Hello"
+
+// Change CSS:
+document.querySelector('#title').style.fontSize = '32px'
+
+
+function toggleDarkMode() {
+    document.querySelector('body').classList.toggle("dark-theme")
+}
