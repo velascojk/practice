@@ -134,3 +134,122 @@ console.log(lessThanOrEqualToZero(-2))
  * oppositeBoolean(false) -> true
  */
 
+function oppositeBoolean(bool) {
+    return !bool
+}
+
+console.log(oppositeBoolean(true))
+console.log(oppositeBoolean(false))
+
+
+/** Q9. Is not the number 0
+ * Given ANY element, return true if it is NOT the number 0.
+ * 
+ * @examples
+ * isNotZero(5) -> true
+ * isNotZero(0) -> false
+ * isNotZero(null) -> true
+ */
+
+function isNotZero(element) {
+    return element !== 0
+}
+
+console.log(isNotZero(5))
+console.log(isNotZero(0))
+console.log(isNotZero(null))
+
+
+/** Q10. Calculate the remainder
+ * Given two numbers, return their remainder when divided by each other.
+ * 
+ * @examples
+ * calcRemainder(4, 2) -> 0
+ * calcRemainder(7, 8) -> 7
+ * calcRemainder(9, 8) -> 1
+ */
+
+function calcRemainder(numb1, numb2) {
+    return numb1 % numb2
+}
+
+console.log(calcRemainder(4, 2))
+console.log(calcRemainder(7, 8))
+console.log(calcRemainder(9, 8))
+
+
+/** Q11. Is the number odd?
+ * Given two numbers, return true if the number is odd.
+ * 
+ * @examples
+ * isOdd(1) -> true
+ * isOdd(2) -> false
+ * isOdd(3) -> true
+ */
+
+function isOdd(number3) {
+    return number3 % 2 !== 0
+}
+
+console.log(isOdd(1))
+console.log(isOdd(2))
+console.log(isOdd(3))
+
+
+/** Q12. If a number is even, return 1 otherwise return -1
+ * Create a function that takes a number argument and returns 1 if the number is even.
+ * If the number is odd return -1.
+ * 
+ * @examples
+ * booleanInteger(1) -> -1
+ * booleanInteger(2) -> 1
+ * booleanInteger(5) -> -1
+ */
+
+function booleanInteger(number4) {
+    return number4 % 2 === 0 ? 1 : -1
+}
+
+console.log(booleanInteger(1))
+console.log(booleanInteger(2))
+console.log(booleanInteger(5))
+
+
+/** Q13. Check if a user is logged in AND subscribed
+ * Create a function that takes in two strings.
+ * If the first string is equal to 'LOGGED_IN' & the second string is equal to 'SUBSCRIBED' return true,
+ * otherwise return false.
+ * 
+ * @examples
+ * isLoggedInAndSubscribed('LOGGED_IN', 'SUBSCRIBED') -> true
+ * isLoggedInAndSubscribed('LOGGED_IN', 'UNSUBSCRIBED') -> false
+ * isLoggedInAndSubscribed('LOGGED_OUT', 'SUBSCRIBED') -> false
+ */
+
+// function isLoggedInAndSubscribed(string1, string2) {
+//     return string1 === 'LOGGED_IN' && string2 === 'SUBSCRIBED'
+// }
+
+// console.log(isLoggedInAndSubscribed('LOGGED_IN', 'SUBSCRIBED'))
+// console.log(isLoggedInAndSubscribed('LOGGED_IN', 'UNSUBSCRIBED'))
+// console.log(isLoggedInAndSubscribed('LOGGED_OUT', 'SUBSCRIBED'))
+
+
+/** Q14. Check if a user is logged in OR subscribed
+ * Create a function that takes in two strings.
+ * If the first string is equal to 'LOGGED_IN' OR the second string is equal to 'SUBSCRIBED' return true,
+ * otherwise return false.
+ * 
+ * @examples
+ * isLoggedInAndSubscribed('LOGGED_IN', 'SUBSCRIBED') -> true
+ * isLoggedInAndSubscribed('LOGGED_IN', 'UNSUBSCRIBED') -> false
+ * isLoggedInAndSubscribed('LOGGED_OUT', 'SUBSCRIBED') -> false
+ */
+
+function isLoggedInAndSubscribed(string3, string4) {
+    return string3 === 'LOGGED_IN' || string4 === 'SUBSCRIBED'
+}
+
+console.log(isLoggedInAndSubscribed('LOGGED_IN', 'SUBSCRIBED'))
+console.log(isLoggedInAndSubscribed('LOGGED_OUT', 'UNSUBSCRIBED'))
+console.log(isLoggedInAndSubscribed('LOGGED_OUT', 'SUBSCRIBED'))
