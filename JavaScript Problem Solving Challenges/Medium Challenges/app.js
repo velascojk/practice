@@ -129,3 +129,17 @@ console.log(calcTime(300))
  * getMax([12, 10, -20]) -> 12
  * getMax([-300, -100, -200]) -> -100
  */
+
+function getMax(array) {
+    let largestNum = array[0];
+    for (let i = 0; i < array.length; ++i) {
+        if (array[i] > largestNum) {
+            largestNum = array[i]
+        }
+    }
+    return largestNum
+}
+
+console.log(getMax([5, 100, 0]))
+console.log(getMax([12, 10, -20]))
+console.log(getMax([-300, -100, -200]))
