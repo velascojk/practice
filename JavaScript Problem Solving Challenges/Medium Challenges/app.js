@@ -21,7 +21,7 @@ console.log(filterOutFalsy([true, 'Dog']))
  * 
  * @examples
  * arrLength([1,2,3]) -> 3
- * arrLength([5,0,-4]) -> 4
+ * arrLength([5,0,-4, 5]) -> 4
  * arrLength([]) -> 0
  */
 
@@ -30,7 +30,7 @@ function arrLength(arr) {
 }
 
 console.log(arrLength([1, 2, 3]))
-console.log(arrLength([5, 0, -4]))
+console.log(arrLength([5, 0, -4, 5]))
 console.log(arrLength([]))
 
 
@@ -113,6 +113,9 @@ function calcTime(seconds) {
     if (timerMinutes.toString().length === 1) {
         timerMinutes = '0' + timerMinutes
     }
+    if (timerSeconds.toString().length === 1) {
+        timerSeconds = '0' + timerSeconds
+    }
     return timerMinutes + ':' + timerSeconds
 }
 
@@ -143,3 +146,128 @@ function getMax(array) {
 console.log(getMax([5, 100, 0]))
 console.log(getMax([12, 10, -20]))
 console.log(getMax([-300, -100, -200]))
+
+
+/** Q8. Reverse a string
+ * Given a string, return the reversed string.
+ * 
+ * @examples
+ * reverseString('abc') -> 'cba'
+ * reverseString('test') -> 'tset'
+ * reverseString('This is cool') -> 'looc si sihT'
+ */
+
+function reverseString(str) {
+    let reversedString = '';
+
+    for (let i = 0; i < str.length; ++i) {
+        reversedString = str[i] + reversedString;
+    }
+    return reversedString;
+}
+
+console.log(reverseString('abc'))
+console.log(reverseString('test'))
+console.log(reverseString('This is cool'))
+
+
+/** Q9. Turn every element in an array into 0
+ * Given an arary of elements, reutrn the same length array filled with 0's.
+ * 
+ * @examples
+ * convertToZeros([5, 100, 0]) -> [0, 0, 0]
+ * convertToZeros([12]) -> [0]
+ * convertToZeros([1, 2, 3, 4, 5]) -> [0, 0, 0, 0, 0]
+ */
+
+function convertToZeros(arr4) {
+    let zeroArray = [];
+
+    for (let i = 0; i < arr4.length; ++i) {
+        zeroArray[i]= 0
+    }
+    return zeroArray
+}
+
+console.log(convertToZeros([5, 100, 0]))
+console.log(convertToZeros([12]))
+console.log(convertToZeros([1, 2, 3, 4, 5]))
+
+
+/** Q10. Filter out all the apples
+ * Given an array of fruits, if it is an apple remove it from the array.
+ * 
+ * @examples
+ * removeApples(['Banana', 'Apple', 'Orange', 'Apple']) -> ['Banana', 'Orange']
+ * removeApples(['Tomato', 'Orange', 'Banana']) -> ['Tomato', 'Orange', 'Banana']
+ * removeApples(['Banana', 'Orange', 'Apple']) -> ['Banana', 'Orange']
+ */
+
+function removeApples(arr5) {
+    let noApplesArray = [];
+
+    for (let i = 0; i < arr5.length; ++i) {
+        if (arr5[i] !== 'Apple') {
+            noApplesArray.push(arr5[i])
+        }
+    }
+    return noApplesArray
+}
+
+console.log(removeApples(['Banana', 'Apple', 'Orange', 'Apple']))
+console.log(removeApples(['Tomato', 'Orange', 'Banana']))
+console.log(removeApples(['Banana', 'Orange', 'Apple']))
+
+
+/** Q11. Filter out all the falsy values
+ * Given an array of values, filter out all the falsy values and only return the truthly values.
+ * 
+ * @examples
+ * filterOutFalsy(["", [], null, undefined, "0"]) -> [[], "0"]
+ * filterOutFalsy(['Tomato', 'Orange', 'Banana', false]) -> ['Tomato', 'Orange', 'Banana']
+ */
+
+function filterOutFalsy(arr6) {
+    let noFalsyArray = [];
+
+    for (let i = 0; i < arr6.length; ++i) {
+        if (!!arr6[i]) {
+            noFalsyArray.push(arr6[i])
+        }
+    }
+    return noFalsyArray
+}
+
+console.log(filterOutFalsy(["", [], null, undefined, "0"]))
+console.log(filterOutFalsy(['Tomato', 'Orange', 'Banana', false]))
+
+
+/** Q12. Truthy to true, Falsy to false
+ * Given an array of truthy and falsy values, return the same array of elements into its boolean value.
+ * 
+ * @examples
+ * convertToBoolean([500, 0, "Jan Kevin", "", []]) -> [true, false, true, false, true]
+ */
+
+/**For Loop Solution: */
+
+// function convertToBoolean(arr7) {
+//     let booleanArray = [];
+
+//     for (let i = 0; i < arr7.length; ++i) {
+//         if (!!arr7[i] === true) {
+//             booleanArray.push(!!arr7[i])
+//         } else if (!!arr7[i] === false) {
+//             booleanArray.push(!!arr7[i])
+//         }
+//     }
+//     return booleanArray
+// }
+
+/**FOR .map Solution: */
+
+function convertToBoolean(arr7) {
+    return arr7.map(elem => !!elem);
+}
+
+console.log(convertToBoolean([500, 0, "Jan Kevin", "", []]))
