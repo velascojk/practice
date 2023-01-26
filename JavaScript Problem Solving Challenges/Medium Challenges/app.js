@@ -264,7 +264,7 @@ console.log(filterOutFalsy(['Tomato', 'Orange', 'Banana', false]))
 //     return booleanArray
 // }
 
-/**FOR .map Solution: */
+/**.map Solution: */
 
 function convertToBoolean(arr7) {
     return arr7.map(elem => !!elem);
